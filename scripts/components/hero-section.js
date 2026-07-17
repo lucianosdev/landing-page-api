@@ -3,14 +3,14 @@ class HeroSection extends HTMLElement {
         this.innerHTML =
 
     `
-    <main class="principal">
+    <section id="inicio" class="hero">
     <p class="slogan">
         Encontre os melhores livros para aprender programação.
      </p>
-    </main>
+     
+    </section>
      `
-
-  ;
+    ;
     }
 }
 
