@@ -8,14 +8,13 @@
     </div>
 
     <nav>
-        <a href="./scripts/components/hero-section.js">Início</a>
-        <a href="#">Livros</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">Início</a>
+        <a href="#livros">Livros</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
     </nav>
 </header>`
-
-  ;
+    ;
     }
     
 }
