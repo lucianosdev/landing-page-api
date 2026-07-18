@@ -2,7 +2,19 @@ class BooksSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <section id="livros" class="books">
-                <h2>Livros</h2>
+             <p class="p-books">
+                Pesquisar livros de programação... 
+                 🔎
+             </p>
+            
+             <div class="btn-books">
+                <button>HTML</button>
+                <button>CSS</button>
+                <button>JavaScript</button>
+                <button>React</button>
+                <button>Spring Boot</button>
+        
+            </div>
             </section>
         `;
     }
