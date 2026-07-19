@@ -16,7 +16,7 @@ class HeroSection extends HTMLElement {
 
      <div class="acesso-books">
         <button class="btn-hero">📚 Explorar Livros</button>
-        <button class="btn-hero">🔎 Pesquisar Livros</button>
+        <button class="btn-hero">ℹ️ Saiba Mais</button>
         
      </div>
 
