@@ -1,0 +1,46 @@
+.btn-hero{
+   background-color: #2c2cbf;
+    color: #ffffff;
+
+    border: 2px, solid, #109610;
+    border-radius: 30px;
+
+    padding: 10px 22px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    color: #f9fd0cfd;
+    box-shadow: 0 6px 8px rgba(44, 44, 191, 0.35);
+}
+
+.btn-chip {
+    background-color: #2c2cbf;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 10px 22px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn-chip:hover {
+    background-color: #3d3df0;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 15px rgba(44, 44, 191, 0.35);
+}

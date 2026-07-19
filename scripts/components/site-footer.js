@@ -4,7 +4,7 @@ class SiteFooter extends HTMLElement {
 
 
 `<footer class="rodape">
-     <h5>Books & Code - Todos os direitos reservados.</h5>
+     <p>&copy; 2026 Books & Code - Desenvolvido por Luciano Brasil.</p>
 </footer>`
     ;
     }

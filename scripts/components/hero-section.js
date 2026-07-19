@@ -7,16 +7,16 @@ class HeroSection extends HTMLElement {
     
     <p class="slogan">
     
-           Aprenda Programação<br/>
+          Aprenda Programação
         através dos Melhores Livros<br/>
 
          Encontre livros sobre HTML, CSS,<br/>
          JavaScript, React e muito mais.
      </p>
 
-     <div class="btn-hero">
-        <button>📚 Explorar Livros</button>
-        <button>🔎 Pesquisar Livros</button>
+     <div class="acesso-books">
+        <button class="btn-hero">📚 Explorar Livros</button>
+        <button class="btn-hero">🔎 Pesquisar Livros</button>
         
      </div>
 
