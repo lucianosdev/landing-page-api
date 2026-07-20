@@ -7,12 +7,14 @@
 
     padding: 10px 22px;
 
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
+    font-family: var(--fonte-button);
 
     cursor: pointer;
 
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-hero:hover {
@@ -43,4 +45,31 @@
     transform: translateY(-3px);
 
     box-shadow: 0 6px 15px rgba(44, 44, 191, 0.35);
+}
+
+.btn-enviar {
+
+    align-self: flex-start;
+    align-self: center;
+
+    padding: 14px 28px;
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    background: #2c2cbf;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+.btn-enviar:hover {
+    background: #4444ff;
 }
