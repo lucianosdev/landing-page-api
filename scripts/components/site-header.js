@@ -7,11 +7,12 @@
         📚 Books & Code
     </div>
 
+
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#livros">Livros</a>
-        <a href="#contato">Contato</a>
+        <a href="#inicio" data-section="inicio">Início</a>
+        <a href="#livros" data-section="livros">Livros</a>
+        <a href="#sobre" data-section="sobre">Sobre</a>
+        <a href="#contato" data-section="contato">Contato</a>
     </nav>
 </header>`
     ;
