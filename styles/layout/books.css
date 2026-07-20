@@ -1,56 +1,119 @@
 .books{
     padding: 80px 20px;
-    scroll-margin-top: 90px; /*ou padding-top: 80px;*/
 
 }
 
-.p-books {
-    margin-top: 30px;
-    padding-top: 30px;
-    font-size: 1.50rem;
+
+.books h2 {
+    color: #25e625;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+.books>p {
+    font-size: 1.15rem;
     color: #25e625;
     text-align: center;
 
+    max-width: 650px;
+
+    margin: 20px auto 50px;
+
 }
+
+.books-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.book-card img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+ 
+
+}
+
+
+.book-info {
+
+    padding: 20px;
+
+}
+
+.book-info h3 {
+
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #2c2cbf;
+
+}
+
+.autor {
+
+    color: #666;
+
+    margin-bottom: 15px;
+
+}
+
+.descricao {
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+
+    color: #2c2cbf;
+
+}
+
 
 .tecnologias {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .busca{
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 4px;
     margin-top: 25px;
 }
 
 
-#pesquisa{
-    display: grid;
+.busca label{
     color: #25e625;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    margin-bottom: 1px;
     text-align-last: center;
+
 }
 
-#pesq{
+.busca input{
 
-    background-color: #d3e0d3;
+    padding: 14px;
     border: 2px solid #19198b;
     border-radius: 10px;
-    padding: 10px 22px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    width: 300px;
     text-align-last: left;
     transition: all 0.3s ease;
     outline: none;
  
 }
 
-#pesq:focus{
+.busca input:focus{
     border-color: #2c2cbf;
     box-shadow: 0 0 10px rgba(61, 61, 240, 0.3);
     outline: none;

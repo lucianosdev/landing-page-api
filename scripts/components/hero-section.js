@@ -21,6 +21,7 @@ class HeroSection extends HTMLElement {
         
      </div>
 
+
     </section>
      `
     ;
