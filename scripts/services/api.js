@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDnHQUUNJSv_LUddJRTjUXHVPIkfTlrb78";
+import { API_KEY } from "../config.js";
 const URL_BASE = "https://www.googleapis.com/books/v1/volumes";
 
 export async function buscarLivros(termo) {
