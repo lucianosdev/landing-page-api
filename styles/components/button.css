@@ -107,4 +107,33 @@
 
 .btn-enviar:hover {
     background: #4444ff;
+}  
+
+.btn-pesquisar{
+    
+    padding: 14px 28px;
+    margin-top: 8px;
+
+    width: 200px;
+
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    background: #2c2cbf;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    transition: .3s;
+
+
 }
+
+.btn-pesquisar:hover{
+    background: #4444ff;
+}
+
+ 

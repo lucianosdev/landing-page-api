@@ -1,10 +1,9 @@
 import { buscarLivros } from "../services/api.js";
+import { mostrarToast } from "../main.js";
 
 class BooksSection extends HTMLElement {
-
-    connectedCallback() {
-
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
         <section id="livros" class="books">
 
             <h2>Livros em Destaque</h2>
@@ -15,54 +14,49 @@ class BooksSection extends HTMLElement {
 
             <div class="books-grid"></div>
 
-            <div class="tecnologias">
-
-                <button class="btn-chip" data-busca="HTML">HTML</button>
-
-                <button class="btn-chip" data-busca="React">React</button>
-
-                <button class="btn-chip" data-busca="Spring Boot">Spring Boot</button>
-
-            </div>
+           
 
             <div class="busca">
 
-                <label for="pesquisa">Busque por um livro 🔎</label>
+              <label for="pesquisa">
+                   Busque por um livro 🔎
+              </label>
 
                 <input
-                    type="text"
-                    id="pesquisa"
-                    placeholder="Informe um livro">
+                type="text"
+                id="pesquisa"
+                placeholder="Informe um livro">
+
+              <button class="btn-pesquisar">
+                       Pesquisar
+              </button>
 
             </div>
 
         </section>
         `;
 
-        this.carregarLivros();
-        this.configurarChips();
+    this.carregarLivros();
+    this.configurarPesquisa();
+  }
+
+  async carregarLivros(termo = "JavaScript") {
+    const grid = this.querySelector(".books-grid");
+    const livros = await buscarLivros(termo);
+    grid.innerHTML = "<p>📚 Carregando livros...</p>";
+
+    if (livros.length === 0) {
+      mostrarToast("📚 Nenhum livro encontrado.");
+
+      return;
     }
 
-    async carregarLivros(termo = "React") {
+    let cards = "";
 
-        const grid = this.querySelector(".books-grid");
+    livros.forEach((livro) => {
+      const info = livro.volumeInfo;
 
-        // Loading
-        grid.innerHTML = "<p>📚 Carregando livros...</p>";
-
-        console.time("API");
-
-        const livros = await buscarLivros(termo);
-
-        console.timeEnd("API");
-
-        let cards = "";
-
-        livros.forEach((livro) => {
-
-            const info = livro.volumeInfo;
-
-            cards += `
+      cards += `
 
                 <article class="book-card">
 
@@ -83,8 +77,9 @@ class BooksSection extends HTMLElement {
 
                         <p class="descricao">
 
-                            ${(info.description ?? "Sem descrição disponível.")
-                                .substring(0, 120)}...
+                            ${(
+                              info.description ?? "Sem descrição disponível."
+                            ).substring(0, 120)}...
 
                         </p>
 
@@ -102,37 +97,40 @@ class BooksSection extends HTMLElement {
                 </article>
 
             `;
+    });
 
-        });
+    grid.innerHTML = cards;
+  }
 
-        grid.innerHTML = cards;
+  configurarPesquisa() {
+    const input = this.querySelector("#pesquisa");
 
-    }
+    const botao = this.querySelector(".btn-pesquisar");
 
-    configurarChips() {
+    botao.addEventListener("click", () => {
+      const termo = input.value.trim();
 
-        const chips = this.querySelectorAll(".btn-chip");
+      if (!termo) {
+        mostrarToast("⚠️ Digite o nome de um livro para pesquisar.");
 
-        chips.forEach((chip) => {
+        return;
+      }
 
-            chip.addEventListener("click", () => {
+      this.carregarLivros(termo);
 
-                // Destaque visual do chip ativo
-                chips.forEach(c => c.classList.remove("ativo"));
-                chip.classList.add("ativo");
+      input.value = "";
+    });
 
-                const termo = chip.dataset.busca;
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        const termo = input.value.trim();
 
-                console.log("Pesquisando:", termo);
+        if (!termo) return;
 
-                this.carregarLivros(termo);
-
-            });
-
-        });
-
-    }
-
+        this.carregarLivros(termo);
+      }
+    });
+  }
 }
 
 customElements.define("books-section", BooksSection);

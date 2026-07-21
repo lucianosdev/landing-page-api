@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
     }, {
-        threshold: 0.6
+        threshold: 0.2
     });
 
     secoes.forEach((secao) => observer.observe(secao));
@@ -57,3 +57,19 @@ formulario.addEventListener("submit", (event) => {
     formulario.reset();
 
 });
+
+export function mostrarToast(mensagem) {
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = mensagem;
+
+    toast.classList.add("mostrar");
+
+    setTimeout(() => {
+
+        toast.classList.remove("mostrar");
+
+    }, 3000);
+
+}
