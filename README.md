@@ -13,5 +13,5 @@ Desenvolver uma landing page consumindo dados de uma API, aplicando conceitos de
 ## Para utilizar a busca de livros:
 
 1. Crie uma API Key da Google Books API.
-2. Abra o arquivo config.js.
+2. Abra o arquivo config.example.js.
 3. Informe sua chave na constante API_KEY.
