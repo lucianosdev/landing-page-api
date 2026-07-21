@@ -10,7 +10,7 @@ Projeto desenvolvido como atividade do curso Dev Full Stack da +praTI: criação
 ## Objetivo
 Desenvolver uma landing page consumindo dados de uma API, aplicando conceitos de front-end e integração com serviços externos.
 
-# Para utilizar a busca de livros:
+## Para utilizar a busca de livros:
 
 1. Crie uma API Key da Google Books API.
 2. Abra o arquivo config.js.
