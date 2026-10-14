@@ -1,16 +1,35 @@
 .sobre{
-    padding: 80px 20px;
     scroll-margin-top: 90px; /*ou padding-top: 80px;*/
-    margin-bottom: 500px;
+    padding:  80px 170px;
+   
 }
 
+.sobre h2 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.conteiner-info{
+    display: flex;
+    justify-content: center;
+}
 
 .info {
+
+    padding: 50px;
     margin-top: 30px;
-    padding-top: 80px;
-    font-size: 1.40rem;
-    color: #25e625;
-    text-align: center;
-    
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #360bf156;
+
 }
 
+.info p{
+
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+
+ 

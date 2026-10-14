@@ -1,14 +1,15 @@
 .hero{
-    padding: 80px 20px;
+    padding:  150px;
 }
 
 
 .slogan {
     margin-top: 30px;
     padding-top: 80px;
-    font-size: 1.40rem;
-    color: #25e625;
+    font-size: 1.8rem;
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
     
 }
 

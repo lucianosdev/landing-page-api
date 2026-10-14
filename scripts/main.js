@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
     }, {
-        threshold: 0.2
+        threshold: 0.30
     });
 
     secoes.forEach((secao) => observer.observe(secao));

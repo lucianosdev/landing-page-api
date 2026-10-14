@@ -8,30 +8,16 @@ class BooksSection extends HTMLElement {
 
             <h2>Livros em Destaque</h2>
 
-            <p>
-                Descubra livros incríveis sobre programação, tecnologia e desenvolvimento.
-            </p>
-
-            <div class="books-grid"></div>
-
-           
-
             <div class="busca">
 
-              <label for="pesquisa">
-                   Busque por um livro 🔎
-              </label>
-
-                <input
-                type="text"
-                id="pesquisa"
-                placeholder="Informe um livro">
-
-              <button class="btn-pesquisar">
-                       Pesquisar
-              </button>
-
+              <label for="pesquisa"> Buscar livros </label>
+              <div class="conteiner-busca">
+                <input type="text" id="pesquisa" placeholder="Digite o título ou assunto...">
+                <button class="btn-pesquisar">Buscar</button> 
+              </div>
             </div>
+
+            <div class="books-grid"></div>
 
         </section>
         `;
@@ -40,67 +26,74 @@ class BooksSection extends HTMLElement {
     this.configurarPesquisa();
   }
 
-  async carregarLivros(termo = "JavaScript") {
-    const grid = this.querySelector(".books-grid");
-    const livros = await buscarLivros(termo);
-    grid.innerHTML = "<p>📚 Carregando livros...</p>";
 
-    if (livros.length === 0) {
-      mostrarToast("📚 Nenhum livro encontrado.");
+async carregarLivros(termo = "JavaScript") {
+  const grid = this.querySelector(".books-grid");
 
-      return;
-    }
+  // Exibe o carregamento enquanto aguarda a API
+  grid.innerHTML = "<p>📚 Carregando livros...</p>";
 
-    let cards = "";
+  const livros = await buscarLivros(termo);
 
-    livros.forEach((livro) => {
-      const info = livro.volumeInfo;
-
-      cards += `
-
-                <article class="book-card">
-
-                    <img
-                        src="${info.imageLinks?.thumbnail ?? "https://placehold.co/180x260?text=Sem+Capa"}"
-                        alt="${info.title}"
-                    >
-
-                    <div class="book-info">
-
-                        <h3>${info.title}</h3>
-
-                        <p class="autor">
-
-                            ${info.authors?.join(", ") ?? "Autor desconhecido"}
-
-                        </p>
-
-                        <p class="descricao">
-
-                            ${(
-                              info.description ?? "Sem descrição disponível."
-                            ).substring(0, 120)}...
-
-                        </p>
-
-                        <a
-                            href="${info.infoLink}"
-                            target="_blank"
-                            class="btn-book">
-
-                            Ver Livro →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            `;
-    });
-
-    grid.innerHTML = cards;
+  if (livros.length === 0) {
+    grid.innerHTML = "<p>📚 Nenhum livro encontrado.</p>";
+    mostrarToast("📚 Nenhum livro encontrado.");
+    return;
   }
+
+  let cards = "";
+
+  livros.forEach((livro) => {
+    const titulo = livro.title ?? "Título indisponível";
+    const autores = livro.author_name?.join(", ") ?? "Autor desconhecido";
+    const ano = livro.first_publish_year ?? "Ano desconhecido";
+
+    const capa = livro.cover_i
+      ? `https://covers.openlibrary.org/b/id/${livro.cover_i}-M.jpg`
+      : "https://placehold.co/180x260?text=Sem+Capa";
+
+    const link = livro.key
+      ? `https://openlibrary.org${livro.key}`
+      : "https://openlibrary.org";
+
+    cards += `
+      <article class="book-card">
+
+        <img
+          src="${capa}"
+          alt="Capa do livro ${titulo}"
+          loading="lazy"
+        >
+
+        <div class="book-info">
+
+          <h3>${titulo}</h3>
+
+          <p class="autor">
+            ${autores}
+          </p>
+
+          <p class="descricao">
+            Ano de publicação: ${ano}
+          </p>
+
+          <a
+            href="${link}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-book"
+          >
+            Ver detalhes do livro →
+          </a>
+
+        </div>
+
+      </article>
+    `;
+  });
+
+  grid.innerHTML = cards;
+}
 
   configurarPesquisa() {
     const input = this.querySelector("#pesquisa");
@@ -128,6 +121,8 @@ class BooksSection extends HTMLElement {
         if (!termo) return;
 
         this.carregarLivros(termo);
+
+        input.value = "";
       }
     });
   }

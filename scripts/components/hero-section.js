@@ -6,12 +6,9 @@ class HeroSection extends HTMLElement {
     <section id="inicio" class="hero">
     
     <p class="slogan">
-    
-          Aprenda Programação
-        através dos Melhores Livros<br/>
 
          Encontre livros sobre HTML, CSS,<br/>
-         JavaScript, React e muito mais.
+         JavaScript, React e muito mais!
      </p>
 
      <div class="acesso-books">

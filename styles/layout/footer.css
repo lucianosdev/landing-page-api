@@ -1,11 +1,11 @@
 .rodape {
     display: flex;
     justify-content: center;
-    background-color: var(--cor-texto);
-    color: var(--cor-footer);
+    background: var(--cor-footer);
     padding: 20px 50px;
     border-radius: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 

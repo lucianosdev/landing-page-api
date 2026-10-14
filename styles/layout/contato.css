@@ -1,21 +1,26 @@
 .contato {
-    padding: 95px 20px;
+    padding: 80px 20px;
 }
 
 .contato h2 {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 5px;
-    color: #25e625;
 }
 
 .contato p {
     text-align: center;
     margin: 0 auto 18px;
     font-size: 1.2rem;
-    color: #25e625;
     line-height: 24px;
     max-width: 600px;
+}
+
+.form-contato{
+    padding: 30px 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #360bf156;
 }
 
 .campo {
@@ -26,7 +31,6 @@
 .campo label {
     margin-bottom: 6px;
     font-size: 1.1rem;
-    color: #25e625;
 }
 
 .campo input,

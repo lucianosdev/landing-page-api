@@ -1,13 +1,13 @@
 class ContatoSection extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <section id="contato" class="contato">
 
                 <h2>Entre em Contato</h2>
 
                 <p>
-                    Tem alguma dúvida, sugestão ou quer conversar sobre livros e programação?</br>
-                    Envie uma mensagem!
+                    Assuntos relacionados a livros e programação? Contate-nos!
+                    
                 </p>
 
                 <form class="form-contato">
@@ -41,10 +41,11 @@ class ContatoSection extends HTMLElement {
                             required
                         ></textarea>
                     </div>
-
-                    <button type="submit" class="btn-enviar">
-                        📩 Enviar Mensagem
-                    </button>
+                  
+                  
+                     <button type="submit" class="btn-enviar">
+                        Enviar 📩 
+                     </button>
 
                 </form>
 
@@ -55,7 +56,7 @@ class ContatoSection extends HTMLElement {
 
             </section>
         `;
-    }
+  }
 }
 
 customElements.define("contato-section", ContatoSection);
